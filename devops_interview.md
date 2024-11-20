@@ -11,3 +11,15 @@ while true;do
   fi
   sleep 60;
 done
+
+
+2.mysql backup
+#!/bin/bash
+MYSQL_HOST="localhost"
+MYSQL_USER="root"
+MYSQL_PASSWORD="passsword"
+DATABASE="mifos"
+#DATE=$(date +%Y%m%d-%H%M%S)
+DATE=$(date)
+FILENAME="mifos-$Date.sql"
+echo "mysqldump -h $MYSQL_HOST -u $MYSQL_USER -p $MYSQL_PASSWORD $DATABASE > $FILENAME"
