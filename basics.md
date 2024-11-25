@@ -171,3 +171,7 @@ select var in word1 word2 ... wordN
 do
    Statement(s) to be executed for every word.
 done
+
+Syntax:
+awk 'pattern { action }' input
+
