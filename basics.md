@@ -174,4 +174,4 @@ done
 
 Syntax:
 awk 'pattern { action }' input
-
+arthimeic syntax --->  $(())
