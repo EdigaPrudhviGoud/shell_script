@@ -12,6 +12,7 @@ while true;do
   sleep 60;
 done
 
+pgrep -x "$PROCESS"
 
 2.mysql backup
 #!/bin/bash
@@ -41,6 +42,22 @@ if [ $FREE_MEMORY_PERCENTAGE -lt $THRESHOLD ]; then
   echo "Warning: Free memory is below the threshold! Only $FREE_MEMORY_PERCENTAGE% free memory left."
 fi
 
+4.This script will check if the NGINX process is running and restart it if it's not. It's assuming that NGINX is being managed as a service (like with systemd).
+#!/bin/bash
+# Name of the process to monitor
+PROCESS="nginx"
+# Check if the NGINX process is running
+if ! pgrep -x "$PROCESS" > /dev/null; then
+    echo "$PROCESS is not running. Restarting..."
+    
+    # Restart the NGINX service (this will work if you're using systemd)
+    sudo systemctl restart nginx
+    
+    echo "$PROCESS has been restarted."
+else
+    echo "$PROCESS is running."
+fi
 
+5.
 
 
