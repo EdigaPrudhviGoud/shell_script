@@ -34,7 +34,8 @@ echo "Total Number of Parameters : $#"
 Arithmetic operations:
 Bourne shell didn't originally have any mechanism to perform simple arithmetic operations but it uses external programs, either awk or expr.
 #!/bin/sh
-val=`expr 10 + 12`
+val=`expr 10 + 12`  
+val2=$((10+12))
 echo "Total value : $val"
 
 Note:There must be spaces between operators and expressions. For example, 2+2 is not correct; it should be written as 2 + 2.
@@ -173,5 +174,15 @@ do
 done
 
 Syntax:
-awk 'pattern { action }' input
-arthimeic syntax --->  $(())
+1.awk 'pattern { action }' input
+2.arthimeic syntax --->  $(())
+3.If..elif..else syntax
+if [ condition ]; then
+   #
+elif [ condition2 ];then
+   #
+else
+   #
+fi
+
+
